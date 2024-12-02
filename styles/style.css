@@ -1,0 +1,203 @@
+/**************/
+/* FONT FACE */
+/**************/
+@font-face {
+  font-family: helvetica;
+  src: url(fonts/helveticaneueltstd_blk.otf);
+}
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing: border-box;  
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+  --color-text: #ffffff;
+  --color-background: #DD3C30;
+}
+
+/**************/
+/* BASE STYLES */
+/**************/
+body {
+  font-family: helvetica;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+h1 {
+  font-family: helvetica;
+}
+
+/**************/
+/* HEADER STYLING */
+/**************/
+header > nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: none;
+  font-family: 'Helvetica', sans-serif;
+  color: var(--color-text);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+header > nav > button:nth-of-type(n+2) {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1em;
+  cursor: pointer;
+}
+
+
+header > nav > span a {
+  text-decoration: underline;
+  color: var(--color-text);
+}
+
+
+
+/**************/
+/* NAV OVERLAY */
+/**************/
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: white;
+  overflow: hidden; 
+  transition: max-height 0.4s ease; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  z-index: 2; 
+}
+
+.nav-overlay.open {
+  max-height: 100%; 
+}
+
+.nav-overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.nav-overlay a {
+  color: black;
+  text-decoration: none;
+  font-size: 2rem;
+  display: block;
+  margin: 20px 0;
+}
+
+.nav-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.nav-close {
+  position: absolute;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+
+/**************/
+/* HAMBURGER MENU */
+/**************/
+button[data-menu] {
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  width: 3em;
+  height: 3em;
+  padding: 0;
+  position: relative;
+}
+
+button[data-menu] span {
+  grid-row-start: 1;
+  grid-column-start: 1; 
+  display: block;
+  width: 2.5em;
+  height: 0.25em;
+  background-color: white; 
+  transition: transform 0.3s ease;
+}
+
+button[data-menu] span:nth-of-type(1) {
+  translate: 0 -1em; 
+}
+
+button[data-menu] span:nth-of-type(3) {
+  translate: 0 1em;   
+}
+
+button.open[data-menu] span:nth-of-type(1) {
+  translate: 0 0em;
+  rotate: 45deg;
+}
+
+button.open[data-menu] span:nth-of-type(2) {
+  scale: 0 1;
+}
+
+button.open[data-menu] span:nth-of-type(3) {
+  translate: 0 0;
+  rotate: -45deg;
+}
+
+
+
+/**************/
+/* NOTES */
+/**************/
+/*
+ul:nth-of-type(1) {
+  display: flex;
+  overflow-x: auto;
+}
+
+ul:nth-of-type(1) li {
+  flex-shrink: 0;  
+}
+
+[data-menu] { 
+  background-color: blue; 
+  color: white; 
+  padding: 10px;
+}
+
+[data-search] { 
+  border: 2px solid red; 
+  font-weight: bold;
+}
+*/
