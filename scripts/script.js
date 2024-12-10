@@ -10,3 +10,4 @@ menuButton.addEventListener("click", () => {
   // Toggle de "open" class op de hamburgerbutton
   menuButton.classList.toggle("open");
 });
+
