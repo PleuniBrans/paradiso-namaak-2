@@ -98,17 +98,26 @@ De basis van mijn HTML opzetten ging vrij goed. Wel heb ik na feedback in de les
   | Pleuni    
   | ---            
   | hoe werkt nth-of-type
+  | 
+
+  | Yulan   
+  | ---            
+  | H1 in het midden krijgen
+  | 
+
+  | Kyra   
+  | ---            
   | grid of flex?
+  | 
   
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Gebruik maken van aria-label
+  - Font maken met @font face
+  - 
 
 </details>
 
@@ -128,20 +137,27 @@ De basis van mijn HTML opzetten ging vrij goed. Wel heb ik na feedback in de les
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  | Pleuni    
+  | ---            
+  | wat ipv classes
+  | 
+
+  | Yulan   
+  | ---            
+  | hoe h3 verbergen?
+  | 
+
+  | Kyra   
+  | ---            
+  | hoe 3 stylesheets
+  | hoe h1 onzichtbaar maken?
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-- ...
+  - Visually hidden voor element onzichtbaar maken maar wel door screenreader gelezen wordt
+  - 3 css bestanden maken
 
 </details>
 
@@ -175,20 +191,28 @@ De basis van mijn HTML opzetten ging vrij goed. Wel heb ik na feedback in de les
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+| Pleuni    
+  | max width naar min widht?           
+  | opstelling van slider
+  | clamp
+
+  | Yulan   
+  | ---            
+  | dark light mode
+  | 
+
+  | Kyra   
+  | ---            
+  | grid area
+  | @media
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - plight/dark mode
+  - hoe clamp gebruiken
+
 
 </details>
 
