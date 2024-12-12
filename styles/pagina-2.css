@@ -100,20 +100,13 @@ h1 {
     font-size: clamp(2.8em, 34vw, 39em);
     text-align: left;
     margin: 0;
-    padding: 0;
+    padding-top: clamp(.4em, 1vw, .4em);;
+    padding-bottom: clamp(.3em, 1vw, 1em);;
     display: block;
     width: 100%;
     margin-bottom: -0.2em;
 }
-/* @media (width > 63.75em) {
-    h1 {
-        font-size: 13em;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-   }
-}
-*/
+
 body > section:nth-of-type(1) {
     padding:3em 1em 1em;
     display:flex;
@@ -127,11 +120,7 @@ body > section:nth-of-type(1) {
         align-items: flex-start;
         padding: 3em 1em 1em;
    }
-   /* body > section:nth-of-type(1) h1 {
-        font-size: 7em;
-        margin: 0;
-   }
-    */
+ 
     body > section:nth-of-type(1) p {
         display: none;
    }
@@ -145,12 +134,20 @@ body > section:nth-of-type(1) {
         right: 0;
    }
     header > nav::after {
-        content: "56 jaar concerten, clubnachten en cultuur";
+        content: "Paradiso";
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         margin: 0 1em;
-        font-size: 1.2em;
+        font-size: 3em;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+   }
+
+   body > header:nth-child(1) > section:nth-child(2) > h1:nth-child(1){
+    display: flex;
+    font-size: clamp(2.8em, 34vw, 18em);
+    padding-bottom: .2em;
    }
 }
 /******************/
@@ -291,7 +288,6 @@ ul > div:first-of-type a:hover::after {
 }
 
 
-/* kleine menu tekst */
 header .toonMenu > div:nth-child(2) a {
     font-size: 1.25em;
     text-decoration: none;
@@ -324,7 +320,6 @@ header .toonMenu > div:nth-child(2) a:hover::after {
 .toonMenu > div:nth-child(1) > li:nth-child(1) > a:nth-child(1){
     padding-top: 2em;
 }
-
 
 .toonMenu{
     overflow-y: scroll;
@@ -367,7 +362,6 @@ body > section:nth-child(2) > p:nth-child(2) > a:nth-child(1){
 }
 
 
-
 /* Algemene body stijl */
 body {
     margin: 0;
@@ -378,79 +372,219 @@ body {
 
 
 
-/* h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 100vw;
-    overflow: hidden;
-    font-size: clamp(2.8em, 34vw, 39em);
-    text-align: left;
-    margin: 0;
+
+
+
+/* foto styling */
+body > main:nth-child(2) > section:nth-child(1) > article > img { 
+    max-width: none;
+    width: clamp(18em, 100vw, 300em); 
+    height: clamp(15em, 100vw, 15em); 
+    object-fit: cover; 
+    padding-left:.6em;
+    padding-top: 2em;
+    padding-bottom: 1em; 
+ 
+}
+
+/* nieuwstekst styling */
+body > main:nth-child(2) > section:nth-child(1) > article > h2 {
+    color: white;
+    font-size: 1.88em;
     padding: 0;
-    display: block;
-    width: 100%;
-    margin-bottom: -0.2em;
-} */
+    margin: 0 0 1em 0;
+    padding-left: .2em;
+}
 
-/* Stijl voor de <section> tags (hoofdgedeelte) */
-/* section {
-    padding: 20px;
-} */
-
-/* Stijl voor de artikelen binnen de section */
-/* article {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-} */
-
-/* Stijl voor afbeeldingen binnen een artikel */
-/* article img {
-    width: 200px;
-    height: auto;
-    margin-right: 20px;
-} */
-
-/* Extra ruimte aan de rechterkant van de afbeelding voor oneven artikelen */
-/* article:nth-child(odd) img {
-    margin-right: 20px;
-} */
-
-/* Extra ruimte aan de rechterkant van de afbeelding voor even artikelen */
-/* article:nth-child(even) img {
-    margin-right: 20px;
-} */
-
-/* Stijl voor de subtitel (h2) binnen artikelen */
-/* h2 {
-    font-size: 1.5em;
-    margin: 0;
-} */
-
-/* Stijl voor de linkjes binnen artikelen */
-/* a {
-    color: #fff;
+/* lees meer link styling */
+body > main:nth-child(2) > section:nth-child(1) > article > a {
+    color: white;
     text-decoration: none;
-    font-size: 1em;
+    padding-left: .6em;
+}
+
+/* lees meer pijltje */
+article a > img {
+    width: .75em; 
+    height: auto; 
+    margin-right: 0.5em;
+}
+
+/* omdraaien */
+body > main:nth-child(2) > section:nth-child(1) > article > a {
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.5em; 
+    flex-direction: row-reverse; 
+}
+article a > img {
+    margin-right: 0; 
+    margin-left: 0.5em; 
+}
+
+body > main:nth-child(2) > section:nth-child(2) {
+    display: grid; 
+    grid-template-columns: auto 1fr; 
+    align-items: start; 
+}
+
+
+@media (min-width: 40.6em) {
+    /* Artikel layout */
+    body > main:nth-child(2) > section:nth-child(1) > article {
+        display: grid; 
+        grid-template-columns: auto 1fr; /* Afbeelding links, tekst rechts */
+        grid-template-rows: auto auto; /* Tekst op rij 1, link op rij 2 */
+        align-items: start; /* Boven uitlijnen */
+        gap: 1em; /* Ruimte tussen afbeelding en tekst/link */
+    }
+
+    /* Afbeelding styling */
+    body > main:nth-child(2) > section:nth-child(1) > article > img {
+        grid-column: 1; /* Plaats afbeelding in de eerste kolom */
+        grid-row: 1 / span 2; /* Laat de afbeelding over beide rijen gaan */
+        width: 16.25em;
+        height: 15em;
+        object-fit: cover;
+        margin-left: 15em;
+    }
+
+    /* Tekst styling */
+    body > main:nth-child(2) > section:nth-child(1) > article > h2 {
+        grid-column: 2; /* Plaats in de tweede kolom */
+        grid-row: 1; /* Plaats op de eerste rij */
+        margin: 1em 0 0.5em 0; /* Boven- en ondermarges */
+        font-size: 1.88em;
+    }
+
+    /* Link styling */
+    body > main:nth-child(2) > section:nth-child(1) > article > a {
+        grid-column: 2; /* Plaats in de tweede kolom */
+        grid-row: 2; /* Plaats op de tweede rij */
+        display: block; /* Zorg dat de link een blok vormt */
+        color: white; /* Linktekst kleur */
+        text-decoration: none; /* Verwijder onderstreping */
+        margin: 0; /* Verwijder standaardmarges */
+        padding-top: 0.5em; /* Voeg optionele ruimte toe boven de link */
+    }
+
+
+    body > main:nth-child(2) > section:nth-child(2) {
+        grid-column: 1; /* Plaats de inhoud in dezelfde kolom als de afbeelding */
+        padding: 15em;
+
+    }
+    
+
+
+}
+
+
+
+
+
+
+
+/* buttons */
+body > main:nth-child(2) > section:nth-child(2) {
+    flex: 0 0 auto;
+    padding-top: 11em;
     display: flex;
-    align-items: center;
-} */
+    flex-direction: row;
+    overflow: hidden;
+}
 
-/* Voeg een marge toe aan de iconen binnen de links */
-/* a i {
-    margin-left: 5px;
-} */
+body > main:nth-child(2) > section:nth-child(2) button {
+    background-color: #4CAF50;
+    color: #fff;
+    font-family: "M Ying Hei", sans-serif;
+    width: 3.5em; 
+    height: 3.5em; 
+    margin: .5em;
+    border: none;
+    box-sizing: border-box; 
+    flex-shrink: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
 
-/* Mediaquery voor responsief ontwerp bij schermen kleiner dan 768px */
-/* @media (max-width: 768px) { */
-    /* Verander de artikel layout naar een kolom en centreer de items */
-    /* article {
-        flex-direction: column;
-        align-items: flex-start;
+/* eerste knop */
+body > main:nth-child(2) > section:nth-child(2) button:first-of-type {
+border: solid white 3px;
+}
+
+body > main:nth-child(2) > section:nth-child(2) p,
+body > main:nth-child(2) > section:nth-child(2) button:last-of-type {
+    display: none;
+}
+
+/* knoppen bij kleinscherm niet zichtbaar */
+@media (min-width: 40.6em) {
+    body > main:nth-child(2) > section:nth-child(2) p,
+    body > main:nth-child(2) > section:nth-child(2) button:last-of-type {
+        display: block; 
     }
-     */
-    /* Voeg marge toe onder de afbeelding bij kleinere schermen */
-    /* article img {
-        margin-bottom: 10px;
-    }
-} */
 
+    
+}
+
+/* einde knoppen shit */
+
+
+/* footer styling */
+
+    footer {
+        display: grid; 
+        grid-template-rows: auto auto; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 1rem; 
+        align-items: center;
+        padding: 1rem;
+        padding-top: 5em;
+    }
+    
+    /* Link 1 en 2 op de eerste rij */
+    footer > a:nth-of-type(1) {
+        grid-column: 1; 
+        text-align: left;
+    }
+    
+    footer > a:nth-of-type(2) {
+        grid-column: 2; 
+        text-align: right;
+    }
+    
+    /* Link 3 en 4 op de tweede rij */
+    footer > a:nth-of-type(3) {
+        grid-row: 2; 
+        grid-column: 1; 
+        text-align: center;
+    }
+    
+    footer > a:nth-of-type(4) {
+        grid-row: 2; 
+        grid-column: 2; 
+        text-align: center;
+    }
+    
+ 
+ @media (min-width: 40.6em) {
+            footer {
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center; 
+                flex-wrap: nowrap; 
+            }
+        
+            footer > a:nth-of-type(1),
+            footer > a:nth-of-type(4),
+            footer > a:nth-of-type(3) {
+                order: 1;
+            }
+        
+            footer > a:nth-of-type(2) {
+                order: 2; 
+                margin-left: auto; 
+            }
+    }

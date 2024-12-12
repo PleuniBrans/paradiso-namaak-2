@@ -3,12 +3,6 @@ const menuTextOpen = document.querySelector("header > nav > button:nth-of-type(1
 const menuTextClosed = document.querySelector("header > nav > button:nth-of-type(1) > label:nth-of-type(2)");
 
 
-// Log de geselecteerde elementen om te zien of ze correct worden opgehaald
-console.log("Menu element:", hetMenu);
-console.log("Open tekst label:", menuTextOpen);
-console.log("Closed tekst label:", menuTextClosed);
-console.log("Hamburger button:", menuButton);
-
 
 const fotoSlider = document.querySelector("section:nth-of-type(1) ul");
 
