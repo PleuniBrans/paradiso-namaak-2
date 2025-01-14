@@ -2,15 +2,27 @@
 /* FONT FACE */
 /**************/
 @font-face {
-  font-family: "helvetica";
+  font-family: "Helvetica";
   src: url("fonts/neue-helvetica-75-bold.otf");
+  font-weight: 900;
+  font-style: normal;
 }
+
 @font-face {
   font-family: "M Ying Hei";
   src: url("/fonts/M Ying Hei PRC W48 W3.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: normal;  
   font-style: normal;
 }
+
+@font-face {
+  font-family: "M Ying Hei";
+  src: url("/fonts/M Ying Hei PRC W48 W3 Bold.ttf") format("truetype");
+  font-weight: 900;  
+  font-style: normal;
+}
+
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -34,8 +46,10 @@ body {
   margin: 0;
 }
 h1 {
-  font-family: inherit;
+  font-family: "Helvetica", sans-serif;
+  font-weight: 900; /* Toepassen van de bold-variant */
 }
+
 img {
   max-width:100%;
 }
@@ -45,4 +59,3 @@ a{
 
 
 
- 
