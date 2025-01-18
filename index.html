@@ -4,14 +4,31 @@
     <meta charset="UTF-8">
     <meta name="author" content="Pleuni Brans">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paradiso IN DE MAAAAAAK</title>
+    <title>Paradiso</title>
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/header.css" rel="stylesheet">
     <link href="styles/footer.css" rel="stylesheet">
     <link href="styles/pagina-1.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/favicon-paradiso.png">
   </head>
+
   <body>
+    <fieldset>
+      <legend aria-label="Kies een thema, licht of donker"></legend>
+      <label>
+        <input type="radio" name="kleurtjes" value="auto" checked>
+        Automatisch
+      </label>
+      <label>
+        <input type="radio" name="kleurtjes" value="light">
+        Licht
+      </label>
+      <label>
+        <input type="radio" name="kleurtjes" value="dark">
+        Donker
+      </label>
+    </fieldset>
+
     <header>
       <nav>
         <!-- Hamburger button -->
@@ -90,19 +107,21 @@
         <button data-program>Programma</button>
       </nav>
     </header>
+
     <section>
       <H1>Paradiso</H1>
       <p>56 jaar concerten, clubnachten en <a href="https://paradiso.com">cultuur</a></p>
     </section>
+
     <main>
       <!-- begin carrousel  -->
       <section>
         <ul>
           <li>
             <div>
-              <p>Nieuws</p>
               <h2>Paradiso en Ticketswap werken samen</h2>
-              <h3>5 Mei</h3>
+              <p><em>Nieuws</em></p>
+              <p><time>Mei</time></p>
             </div>
             <img src="images/slider-imgs/tickets.png" alt="Ticketscanner">
           </li>
@@ -226,7 +245,6 @@
               <h2>Adwaith</h2>
               <p><em>In Paradiso</em></p>
               <p><time>18 maart</time></p>
-
                 <div>
                   <p>Concert</p>
                 <p>Net bevestigd</p>
@@ -339,14 +357,6 @@
               </div>
               <div>
                 <h4>Stijlvolle artpop uit Antwerpen</h4>
-              </div>
-            </li>
-              <div>
-                <h3>Naima Bock</h3>
-                <time>19:30</time>
-              </div>
-              <div>
-                <h4>Alternatieve indie geworteld in folk</h4>
               </div>
             </li>
             <li>

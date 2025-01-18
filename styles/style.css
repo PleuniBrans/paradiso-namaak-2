@@ -7,18 +7,16 @@
   font-weight: 900;
   font-style: normal;
 }
-
 @font-face {
   font-family: "M Ying Hei";
   src: url("/fonts/M Ying Hei PRC W48 W3.ttf") format("truetype");
-  font-weight: normal;  
+  font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: "M Ying Hei";
   src: url("/fonts/M Ying Hei PRC W48 W3 Bold.ttf") format("truetype");
-  font-weight: 900;  
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -29,13 +27,106 @@
 *, *::after, *::before {
   box-sizing: border-box;
 }
+
+
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
+  color-scheme: light dark;
+
+  /* Licht kleuren */
   --color-text: #ffffff;
   --color-background: #DD3C30;
+  --color-text-menu: black;
+  --color-icons: white;
+  --button-normal: #be3329;
+  --button-hover: #8d271f;
+
+  /* Donker kleuren */
+  --color-text-dark: #e0e0e0;
+  --color-background-dark: #121212;
+  --color-text-menu-dark: #ffffff;
+  --color-icons-dark: #ffffff;
+  --button-normal-dark: #333333;
+  --button-hover-dark: #555555;
 }
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: var(--color-text-dark);
+    --color-background: var(--color-background-dark);
+    --color-text-menu: var(--color-text-menu-dark);
+    --color-icons: var(--color-icons-dark);
+    --button-normal: var(--button-normal-dark);
+    --button-hover: var(--button-hover-dark);
+  }
+}
+
+/*knoppen en menu's */
+button {
+  background-color: var(--button-normal);
+  color: var(--color-icons);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: var(--button-hover);
+}
+/* achtergrond en tekst */
+html {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+header nav ul {
+  color: var(--color-text-menu);
+}
+:root:has([value="light"]:checked) {
+  --color-text: #ffffff;
+  --color-background: #DD3C30;
+  --color-text-menu: black;
+  --color-icons: white;
+  --button-normal: #be3329;
+  --button-hover: #8d271f;
+}
+:root:has([value="auto"]:checked) {
+  --color-text: #ffffff;
+  --color-background: #DD3C30;
+  --color-text-menu: black;
+  --color-icons: white;
+  --button-normal: #be3329;
+  --button-hover: #8d271f;
+}
+:root:has([value="dark"]:checked) {
+  --color-text: #e0e0e0;
+  --color-background: #121212;
+  --color-text-menu: #ffffff;
+  --color-icons: #ffffff;
+  --button-normal: #333333;
+  --button-hover: #555555;
+}
+.mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.mode-toggle input[type="checkbox"] {
+  display: none;
+}
+fieldset {
+  position: fixed;
+  bottom: 5em;
+  right: 0;
+  padding: .5em;
+  background-color: var(--color-background);
+  border-radius: .2em;
+  border-style: none;
+  z-index: 9999;
+}
+
+
 /**************/
 /* BASE STYLES */
 /**************/
@@ -47,15 +138,12 @@ body {
 }
 h1 {
   font-family: "Helvetica", sans-serif;
-  font-weight: 900; /* Toepassen van de bold-variant */
+  font-weight: 900;
 }
-
 img {
   max-width:100%;
 }
 a{
   text-decoration: none;
+  color: var(--color-text);
 }
-
-
-

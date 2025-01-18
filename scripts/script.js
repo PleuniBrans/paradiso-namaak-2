@@ -71,3 +71,5 @@ slider.addEventListener('mousemove', (e) => {
   slider.scrollLeft = scrollLeft - walk;
   // console.log(x, walk, slider.scrollLeft);
 });
+
+

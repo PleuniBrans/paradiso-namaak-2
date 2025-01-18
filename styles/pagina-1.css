@@ -1,4 +1,4 @@
-
+   
    /**************/
    /* eerste slider */
    /**************/
@@ -33,12 +33,13 @@ section:nth-of-type(1) ul li {
     overflow: hidden;
     cursor: grab;
 }
+
 section:nth-of-type(1) ul li img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
 }
+
 section:nth-of-type(1) ul li > div {
     position: absolute;
     top: 0;
@@ -105,20 +106,14 @@ section:nth-of-type(1) ul li::before {
 }
 
 
- /* GEKLOOOOT */
 
-/* ul:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-} */
 
-/* roze bovenaan */
+
 li > div > div {
     color: var(--color-text);
     order: -1;
 }
 
-/* oranje onderaan */
 li > div > p:nth-of-type(1) {
   order: 2;
 }
@@ -132,8 +127,6 @@ li > div > p:nth-of-type(2) {
 @media (max-width: 64em) {
     section:nth-of-type(1) ul li {
        /* Flexibele breedte met kleiner formaat */
-       /** @type {
-            Stel hier plaatje in voor klein scherm voor slider */
             flex: 0 0 clamp(65vw, 20vw, 25em);
             max-width: clamp(65vw, 20vw, 25em);
        }
@@ -190,7 +183,7 @@ li > div > p:nth-of-type(2) {
         padding: 0.7em 1.2em;
         font-size: 1em;
         cursor: pointer;
-        background-color: #be3329;
+        background-color: var(--button-normal);
         border: none;
         color: var(--color-text);
         font-family: "M Ying Hei", sans-serif;
@@ -200,7 +193,7 @@ li > div > p:nth-of-type(2) {
         min-width: 0;
    }
     section ul li button:hover {
-        background-color: #8d271f;
+        background-color: var( --button-hover);
    }
     section:nth-child(3) > article {
         background: var( --color-background);
@@ -229,7 +222,6 @@ li > div > p:nth-of-type(2) {
    }
 
 
-   /* !!!!!!!!!!!!Aandacht nodig!!!!!!!!!! */
    section:nth-child(3) > article ul h3 {
     font-size: 1em;
     font-family: "M Ying Hei", sans-serif;
@@ -282,7 +274,7 @@ li > div > p:nth-of-type(2) {
     overflow: hidden;
     text-overflow: ellipsis;
     font-family: "M Ying Hei", sans-serif;
-    font-weight: normal; /* Dit zorgt ervoor dat de tekst niet vet is */
+    font-weight: normal; 
     margin: 0;
     cursor: pointer;
 }
