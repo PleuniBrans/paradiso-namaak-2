@@ -52,17 +52,17 @@
   --button-hover-dark: #555555;
 }
 
-
 @media (prefers-color-scheme: dark) {
   :root {
+    --menu-background: var(--menu-background-dark); 
     --color-text: var(--color-text-dark);
     --color-background: var(--color-background-dark);
     --color-text-menu: var(--color-text-menu-dark);
     --color-icons: var(--color-icons-dark);
     --button-normal: var(--button-normal-dark);
-    --button-hover: var(--button-hover-dark);
   }
 }
+
 
 /*knoppen en menu's */
 button {
@@ -123,7 +123,7 @@ fieldset {
   background-color: var(--color-background);
   border-radius: .2em;
   border-style: none;
-  z-index: 9999;
+  z-index: 1;
 }
 
 

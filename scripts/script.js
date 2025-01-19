@@ -1,75 +1,76 @@
+//selecteer hamburgerknop in menu
 const menuButton = document.querySelector("header > nav > button:nth-of-type(1)");
+//selecteer label menu geopend
 const menuTextOpen = document.querySelector("header > nav > button:nth-of-type(1) > label:nth-of-type(1)");
+//selecteer label menu gesloten 
 const menuTextClosed = document.querySelector("header > nav > button:nth-of-type(1) > label:nth-of-type(2)");
-
-
-
+//selecteer foto-slider eerste sectie
 const fotoSlider = document.querySelector("section:nth-of-type(1) ul");
 
 
-fotoSlider.scrollBy(window.innerWidth/2,0)
 
-// const navOverlay = document.querySelector(".nav-overlay");
+
+//scroll slider automatisch  halve schermbreedte 
+fotoSlider.scrollBy(window.innerWidth / 2, 0);
+
+
+
 const hetMenu = document.querySelector("header nav ul");
 
+//zet class op label van menuTextOpen 
 menuTextOpen.classList.toggle("active");
-
+//klik-eventlistener hamburgerknop
 menuButton.addEventListener("click", () => {
-  // Toggle de "toonMenu" class op de nav
-  hetMenu.classList.toggle("toonMenu");
-
-
+//toon of verberg het menu 
+hetMenu.classList.toggle("toonMenu");
+//wissel tussen het openen en sluiten menu
 menuTextOpen.classList.toggle("active");
 menuTextClosed.classList.toggle("active");
-
-
-  // Toggle de "open" class op de hamburgerbutton
-  menuButton.classList.toggle("open");
+//open-class op hamburgerknop 
+menuButton.classList.toggle("open");
 });
 
 
 
-/** Drag and drop **/
+/**drag-and-drop voor de slider **/
 const slider = document.querySelector('section:nth-of-type(1) ul');
-let isDown = false;
-let startX;
-let scrollLeft;
+let isDown = false; // muisknop ingedrukt of niet
+let startX; //start muis
+let scrollLeft; //start scrollen
 
+//indrukken van de muisknop op slider
 slider.addEventListener('mousedown', (e) => {
-  let rect = slider.getBoundingClientRect();
-  isDown = true;
-  slider.classList.add('active');
-  // Get initial mouse position
-  startX = e.pageX - rect.left;
-  // Get initial scroll position in pixels from left
-  scrollLeft = slider.scrollLeft;
-  console.log(startX, scrollLeft);
+  let rect = slider.getBoundingClientRect(); //bepaal sliderpositie
+  isDown = true; // activeer dragmod3
+  slider.classList.add('active'); //actieve class voor styling
+  startX = e.pageX - rect.left; //bereken startpositie muis
+  scrollLeft = slider.scrollLeft; //bewaar huidige positie
+
+  console.log(startX, scrollLeft); 
 });
 
+
+// muis weg
 slider.addEventListener('mouseleave', () => {
-  isDown = false;
-  slider.dataset.dragging = false;
-  slider.classList.remove('active');
+  isDown = false; // drag-modus uit
+  slider.dataset.dragging = false; //reset drag status
+  slider.classList.remove('active'); //verwijder actieve class
 });
 
+// Luister naar het loslaten van de muisknop op de slider
 slider.addEventListener('mouseup', () => {
-  isDown = false;
-  slider.dataset.dragging = false;
-  slider.classList.remove('active');
+  isDown = false; // Deactiveer drag-modus
+  slider.dataset.dragging = false; // Reset dragging-status
+  slider.classList.remove('active'); // Verwijder de actieve class
 });
 
+// muisbewegingen over de slider
 slider.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  let rect = slider.getBoundingClientRect();
-  e.preventDefault();
-  slider.dataset.dragging = true;
-  // Get new mouse position
-  const x = e.pageX - rect.left;
-  // Get distance mouse has moved (new mouse position minus initial mouse position)
-  const walk = (x - startX);
-  // Update scroll position of slider from left (amount mouse has moved minus initial scroll position)
-  slider.scrollLeft = scrollLeft - walk;
-  // console.log(x, walk, slider.scrollLeft);
+  if (!isDown) return; // Als drag-modus niet actief is, gebeurt niks
+  let rect = slider.getBoundingClientRect(); //sliderpositie
+  e.preventDefault(); 
+  slider.dataset.dragging = true; //dragging-status actief
+  const x = e.pageX - rect.left; // Bereken nieuwe muispositie
+  const walk = (x - startX); // Bereken hoeveel muis beweegt
+  slider.scrollLeft = scrollLeft - walk; // Update scrollpositie
 });
-
-
